@@ -9,11 +9,11 @@ the one that would be used in the corresponding sequential code.
 
 Similar problems are caused by the computer's memory hierarchy (see Fig 1.), independently of the available parallelism. Moving data from and to memory has become the bottleneck. The memory hierarchy, aims to address this problem, but can only work if data is accessed in a suitable order. Compilers are inherently limited in optimizing for the memory hirarchy since this optimizations may require algorithm restructuring. 
 
-<center>![image](./images/memory-hierarchy.png)</center>
+![image](./images/memory-hierarchy.png)
 
 Adding to these problems is the fact that CPU frequency scaling is approaching its en due to limits to the chip's possible power density (see Fig 2.). This implies the end of "automatic speedup"; then, in order to obtain performance gains, we need to parallelize. 
 
-<center>![image](./images/intel_performance.png)</center>
+![image](./images/intel_performance.png)
 
 
 The first step before parallelize code is to optimize our sequential code. This type of optimizations involves not only how to use well the memory resources but also how to avoid, when it is possible,  compute more instructions than the ones we need.
@@ -284,7 +284,7 @@ automatically.
 
 The matrix in the memory looks like:
 
-<center>![image](./images/mat_in_mem.jpg)</center>
+![image](./images/mat_in_mem.jpg)
 
 ### Naïve code:
 
@@ -356,7 +356,7 @@ If now we run both codes with `-O3` we obtain:
 
 You can try different values of `BX` and `BY` and see how the performance varies. But we are lucky because someone ran different possible combinations and found the best blocking for this problem is `BX=2^1` and `BY=2^8`.
 
-<center>![image](./images/best_blocking.png)</center>
+![image](./images/best_blocking.png)
 
 *Speedup*: 0.19/0.035 = 5.4x :D :D :D
 
